@@ -28,6 +28,9 @@ More information:
 登陆后的截图：
 ![image](https://github.com/syh0304/humhub-yii2/blob/master/images/screenshot_202206161318542.png)
 
+游客访问的截图
+![image](https://github.com/syh0304/humhub-yii2/blob/master/images/screenshot_202206161318152.png)
+
 
 
 
