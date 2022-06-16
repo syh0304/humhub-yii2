@@ -2,6 +2,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+
 $display=false;
 if(Yii::$app->user->isGuest){
     $display=false;
