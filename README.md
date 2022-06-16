@@ -26,7 +26,7 @@ More information:
 下面是修改后效果截图
 
 登陆后的截图：
-https://github.com/syh0304/humhub-yii2/blob/master/images/screenshot_202206161318542.png
+![image](https://github.com/syh0304/humhub-yii2/blob/master/images/screenshot_202206161318542.png）
 
 
 
