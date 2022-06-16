@@ -46,7 +46,8 @@ humhub.module('ui.topNavigation', function (module, require, $) {
 
     var isOverflow = function() {
         $searchMenu = $('.search-menu');
-        return $topNav[0].offsetHeight > $topBarSecond[0].offsetHeight || ($searchMenu.length && $searchMenu[0].offsetTop);
+        var window_width=$(window).width();
+        return window_width<550 || $topNav[0].offsetHeight > $topBarSecond[0].offsetHeight || ($searchMenu.length && $searchMenu[0].offsetTop);
     };
 
     module.export({
