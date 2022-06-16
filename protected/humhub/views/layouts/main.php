@@ -2,6 +2,13 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+$display=false;
+if(Yii::$app->user->isGuest){
+    $display=false;
+}else{
+    $display=true;
+}
+
 \humhub\assets\AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -17,43 +24,56 @@
     <body>
         <?php $this->beginBody() ?>
 
-        <!-- start: first top navigation bar -->
-        <div id="topbar-first" class="topbar">
+        <!-- start: second top navigation bar -->
+        <div id="topbar-second" class="topbar">
             <div class="container">
                 <div class="topbar-brand hidden-xs">
                     <?= \humhub\widgets\SiteLogo::widget(); ?>
                 </div>
 
+                <ul class="nav" id="top-menu-nav">
+                    <!-- load space chooser widget -->
+                    <?php
+                    if($display){
+                        echo \humhub\modules\space\widgets\Chooser::widget();
+                    }
+                    ?>
+                    <!-- load navigation from widget -->
+                    <?php
+                    if($display){
+                        echo \humhub\widgets\TopMenu::widget();
+                    }
+                    ?>
+                </ul>
+
+                <ul class="nav pull-right" id="search-menu-nav">
+                    <?php
+                    if($display){
+                        echo \humhub\widgets\TopMenuRightStack::widget();
+                    }
+                    ?>
+                </ul>
+                
                 <div class="topbar-actions pull-right">
                     <?= \humhub\modules\user\widgets\AccountTopMenu::widget(); ?>
                 </div>
 
                 <div class="notifications pull-right">
-                    <?= \humhub\widgets\NotificationArea::widget(); ?>
+                    <?php
+                    if($display){
+                        echo \humhub\widgets\NotificationArea::widget();
+                    }
+                    ?>
                 </div>
-            </div>
-        </div>
-        <!-- end: first top navigation bar -->
-
-        <!-- start: second top navigation bar -->
-        <div id="topbar-second" class="topbar">
-            <div class="container">
-                <ul class="nav" id="top-menu-nav">
-                    <!-- load space chooser widget -->
-                    <?= \humhub\modules\space\widgets\Chooser::widget(); ?>
-
-                    <!-- load navigation from widget -->
-                    <?= \humhub\widgets\TopMenu::widget(); ?>
-                </ul>
-
-                <ul class="nav pull-right" id="search-menu-nav">
-                    <?= \humhub\widgets\TopMenuRightStack::widget(); ?>
-                </ul>
             </div>
         </div>
         <!-- end: second top navigation bar -->
 
-        <?= $content; ?>
+        <?php 
+        if($this->context->id=='dashboard'||$display){
+            echo $content;
+        }
+        ?>
 
         <?php $this->endBody() ?>
     </body>
