@@ -31,7 +31,7 @@ More information:
 
 游客访问的截图：
 
-![image](https://github.com/syh0304/humhub-yii2/blob/master/images/screenshot_202206161318152.png)
+![image](https://github.com/syh0304/humhub-yii2/blob/master/images/screenshot_20220616133957.png)
 
 
 
