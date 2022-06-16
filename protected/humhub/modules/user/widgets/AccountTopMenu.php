@@ -49,7 +49,7 @@ class AccountTopMenu extends Menu
 
 
             $this->addEntry(new MenuLink([
-                'link' => ModalButton::primary($signUpText)->load(Url::toRoute('/user/auth/login'))->cssClass('btn-enter'),
+                'link' => ModalButton::none($signUpText)->load(Url::toRoute('/user/auth/login'))->cssClass('btn margin-t-7'),
                 'sortOrder' => 100
             ]));
 
