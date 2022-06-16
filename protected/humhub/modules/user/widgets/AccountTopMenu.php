@@ -6,6 +6,7 @@
  * @license https://www.humhub.com/licences
  */
 
+
 namespace humhub\modules\user\widgets;
 
 use humhub\modules\admin\widgets\AdminMenu;
